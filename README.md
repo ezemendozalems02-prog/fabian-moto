@@ -105,3 +105,4 @@ src/
 supabase/
 └── schema.sql                    # Schema completo de la BD
 ```
+# fabian-moto
