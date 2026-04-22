@@ -106,3 +106,7 @@ supabase/
 └── schema.sql                    # Schema completo de la BD
 ```
 # fabian-moto
+
+---
+*Desplegado y configurado con éxito.*
+
