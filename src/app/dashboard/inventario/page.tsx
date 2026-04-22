@@ -23,15 +23,18 @@ export default function InventarioPage() {
 
   const fetchProducts = async () => {
     const supabase = createClient()
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from('products')
-      .select('*, category:categories(name)')
+      .select('*')
       .eq('is_active', true)
       .order('name')
+      
+    if (error) console.error('Error in Inventory fetch:', error)
+
     if (data) {
       setProducts(data.map(p => ({
         ...p,
-        category_name: (p.category as unknown as { name: string })?.name,
+        category_name: '-', // Simplificamos por ahora para asegurar que se vea
       })))
     }
     setLoading(false)
